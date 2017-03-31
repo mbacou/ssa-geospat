@@ -1,13 +1,11 @@
 ---
 title: "Panel Analyses for sub-Saharan Africa"
 author: "[Melanie Bacou](http://github.com/mbacou)"
-output: 
-  html_document: 
-    theme: readable
+output: tufte::tufte_html
 ---
 
 Work in progress:
 
-* [AGRA AASR 2017 chapter](2017-agra-aasr.nb.html)
-* [Tanzania resilience study](2016-resilience.nb.html)
-* [Poverty GWR for SSA](2016-poverty.nb.html)
+* [AGRA AASR 2017 chapter](2017-agra-aasr.html) for BMGF
+* [Tanzania resilience study](2016-resilience.nb.html) for IFPRI
+* [Poverty GWR for SSA](2016-poverty.nb.html) for IFPRI
