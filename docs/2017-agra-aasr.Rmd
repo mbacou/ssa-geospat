@@ -20,6 +20,8 @@ output:
     toc_float: yes
 ---
 
+--------------------------------------------------------------------------------------
+
 # Background
 
 This study is a prospective chapter in *AGRA Africa Agriculture Status Report (AASR) 2017*.
