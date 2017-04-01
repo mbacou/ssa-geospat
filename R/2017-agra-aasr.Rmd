@@ -171,7 +171,7 @@ Inventory and summarize the latest versions of IFPRI's harmonized variables. Som
 
 ### Dataset #1 (Poverty, Land, Climate paper)
 
-This dataset contains `r hh.dim$hh1[2]` variables and `r hh.dim$hh1[1]` observations. The breakdown across countries and survey years is as follows, and variables are further described in the next table. Many of these variables are also document in [@azzarri2016poverty].
+This dataset contains `r hh.dim$hh1[2]` variables and `r hh.dim$hh1[1]` observations. The breakdown across countries and survey years is as follows, and variables are further described in the next table. Many of these variables are also documented in [@azzarri2016poverty].
 
 ```{r}
 
@@ -227,7 +227,7 @@ dt3var
 
 ## Demographic and Health Surveys (harmonized)
 
-IFPRI also hold cross-country harmonized variables from the latest DHS. Complete metadata is at in a [DHS Google Sheet](https://docs.google.com/spreadsheets/d/1v8DDLgi9lQbS4uKnxYPM83PYC90rijJvjKN4xAntKlE/edit#gid=916658631). We need to request access to the CHILD and WOMAN recodes, I only have the STRATA summaries.
+IFPRI also hold cross-country harmonized variables from the latest DHS. Complete metadata is in a [DHS Google Sheet](https://docs.google.com/spreadsheets/d/1v8DDLgi9lQbS4uKnxYPM83PYC90rijJvjKN4xAntKlE/edit#gid=916658631). We need to request access to the CHILD and WOMAN recodes, I only have the STRATA summaries.
 
 
 ## Other Country-Level Panel Variables
