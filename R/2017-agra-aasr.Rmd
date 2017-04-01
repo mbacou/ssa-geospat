@@ -13,7 +13,7 @@ output:
     fig_caption: yes
     fig_height: 5
     toc: yes
-    toc_depth: 2
+    toc_depth: 3
     toc_float: yes
 ---
 
@@ -207,7 +207,7 @@ rhandsontable(hh3.lbl[1:150], rowHeaders=NULL) %>%
 
 ## Demographic and Health Surveys (harmonized)
 
-## Other Panel Country-Level Variables
+## Other Country-Level Panel Variables
 
 
 
