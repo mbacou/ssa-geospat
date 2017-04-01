@@ -214,8 +214,8 @@ This dataset contains `r hh.dim$hh3[2]` variables and `r hh.dim$hh3[1]`  observa
 dt3sum
 
 ```
-
-This dataset includes over 2,000 constructed climatic variables (SPEI, temperature, rainfall, PDSI, etc.). They are not shown in the variable summary below.
+.  
+This dataset also includes over 2,000 constructed climatic variables (monthly SPEI, temperature, rainfall, PDSI, etc.). To save space they are not shown in the variable summary below.
 
 ```{r}
 
@@ -225,14 +225,14 @@ dt3var
 
 ## Demographic and Health Surveys (harmonized)
 
-IFPRI also holds cross-country harmonized variables from the latest DHS. Complete metadata is in a [DHS Google Sheet](https://docs.google.com/spreadsheets/d/1v8DDLgi9lQbS4uKnxYPM83PYC90rijJvjKN4xAntKlE/edit#gid=916658631). We need to request access to the CHILD and WOMAN recodes, I only have the STRATA summaries.
+IFPRI holds cross-country harmonized variables from the latest DHS. Complete metadata is in a [DHS Google Sheet](https://docs.google.com/spreadsheets/d/1v8DDLgi9lQbS4uKnxYPM83PYC90rijJvjKN4xAntKlE/edit#gid=916658631). We would need to request access to the CHILD and WOMAN recodes, I only have the STRATA summaries.
 
 
 ## Other Country-Level Panel Variables
 
 ### Ghana GLSS Rounds
 
-### Tanzania Farm Segmentation Study
+### Nigeria Farm Segmentation Study
 
 
 # References
