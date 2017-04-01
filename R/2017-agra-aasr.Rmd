@@ -205,7 +205,7 @@ dt2var
 ### Dataset #3 (Panels for Resilience study)
 
 
-This dataset contains `r hh.dim$hh3[2]` variables and `r hh.dim$hh3[2]`  observations. The breakdown across countries and survey years is as follows, and variables are further described in the next table.
+This dataset contains `r hh.dim$hh3[2]` variables and `r hh.dim$hh3[1]`  observations. The breakdown across countries and survey years is as follows, and variables are further described in the next table.
 
 ```{r}
 
