@@ -206,7 +206,7 @@ Inventory and summarize the latest versions of IFPRI's harmonized variables. Som
 
 ### Dataset #1 (Poverty, Land, Climate paper)
 
-This dataset contains `r hh.dim$hh1[2]` variables and `r hh.dim$hh1[1]` observations. The breakdown across countries and survey years is as follows, and variables are further described in the next table. Many of these variables are also documented in [@azzarri2016poverty].
+This dataset contains `r hh.dim$hh1[2]` variables and `r hh.dim$hh1[1]` observations. The breakdown across countries and survey years is as follows, and variables are further described in the next table. Many of these variables are also documented in @azzarri2016poverty.
 
 ```{r}
 
@@ -221,9 +221,9 @@ dt1var
 
 ```
 
-### Dataset #2 (Farm variables for Agricultural Snapshots)
+### Dataset #2 (HarvestChoice Agricultural Snapshots)
 
-The household-level file is corrupt (would need to contact IFPRI directly) but the variables are similar in the region-level file.
+My copy of the household-level file is corrupt (would need to contact IFPRI directly) but the variables are similar in the region-level file.
 
 This dataset contains `r hh.dim$hh2[2]` variables. The breakdown across countries and survey years is as follows, and variables are further described in the next table.
 
