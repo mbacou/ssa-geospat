@@ -34,7 +34,8 @@ load("../tmp/2017-agra-aasr.RData")
 
 ```{r, eval=FALSE, collapse=TRUE}
 
-# Helper - Construct summary stats
+#####################################################################################
+# Helper - Construct variable summary
 summaryTable <- function(dt) {
   
   dt.lbl <- data.table(
@@ -53,10 +54,10 @@ summaryTable <- function(dt) {
   dt.lbl <- dt.lbl[names(dt)]
   setcolorder(dt.lbl, c(1,9,2:8))
   
-  dt <- data.table(dt)
   dt.lbl[, `Hist.` := sapply(dt, function(x) ifelse(class(x)=="numeric", toJSON(list(values=hist(x, plot=FALSE)$counts)), toJSON(NA)))]
   return(dt.lbl)
 }
+#####################################################################################
 
 # Load dataset #1 (variables extracted for the Poverty, Land, Climate paper)
 hh1 <- read.dta("../tmp/Final_SSA_hhPOV_ 6 Apr 2016.12.dta")
@@ -82,7 +83,7 @@ dt1var <- rhandsontable(hh1.lbl, rowHeaders=NULL) %>%
 hh2 <- read.dta("../tmp/Combined_Regdemovars13.12.dta")
 hh.dim$hh2 <- dim(hh2)
 
-# Show summaries
+# Summarize
 hh2.lbl <- summaryTable(hh2)
 hh2 <- data.table(hh2)
 
@@ -101,7 +102,7 @@ dt2var <- rhandsontable(hh2.lbl, rowHeaders=NULL) %>%
 hh3 <- read.dta("../tmp/Combined_4_Mel.12.dta")
 hh.dim$hh3 <- dim(hh3)
 
-# Show summaries
+# Summarize
 hh3.lbl <- summaryTable(hh3)
 hh3 <- data.table(hh3)
 
@@ -116,6 +117,42 @@ rm(hh3)
 # Describe variables
 dt3var <- rhandsontable(hh3.lbl[1:150], rowHeaders=NULL) %>%
   hot_col("Hist.", renderer = htmlwidgets::JS("renderSparkline"))
+
+# Load dataset #4 (SSA Poverty)
+hh4 <- read.dta("../tmp/SSApoverty_Dist_forGWR.12.dta")
+hh.dim$hh4 <- dim(hh4)
+
+# Keep labels
+hh4.lbl <- data.table(varCode=names(hh4), varLabel=attr(hh4, "var.labels"))
+
+# Remove dummy vars
+hh4 <- hh4[, !names(hh4) %like% "ctry"]
+hh4 <- hh4[, !names(hh4) %like% "yr"]
+hh4 <- hh4[, !names(hh4) %like% "fs"]
+setkey(hh4.lbl, varCode)
+hh4.lbl <- hh4.lbl[names(hh4)]
+attr(hh4, "var.labels") <- hh4.lbl$varLabel
+
+# Correct types
+for (i in names(hh4)) if (class(hh4[[i]])=="numeric") hist(hh4[[i]], plot=F)
+hh4[[i]] <- as.character(hh4[[i]])
+
+# Summarize
+hh4.lbl <- summaryTable(hh4)
+hh4 <- data.table(hh4)
+
+# List surveys/years included in this set
+dt4sum <- rhandsontable(hh4[, .(
+  Regions=uniqueN(svyL1Cd), 
+  Districts=uniqueN(paste(svyL1Cd, svyL2Cd)), 
+  Obs=.N), keyby=.(ISO3, Year=as.integer(year))],
+  rowHeaders=NULL)
+rm(hh4)
+
+# Describe variables
+dt4var <- rhandsontable(hh4.lbl, rowHeaders=NULL) %>%
+  hot_col("Hist.", renderer = htmlwidgets::JS("renderSparkline"))
+
 
 # Load GHA GLSS rounds (Eduardo)
 
@@ -206,7 +243,6 @@ dt2var
 
 ### Dataset #3 (Panels for Resilience Study)
 
-
 This dataset contains `r hh.dim$hh3[2]` variables and `r hh.dim$hh3[1]`  observations. The breakdown across countries and survey years is as follows, and variables are further described in the next table.
 
 ```{r}
@@ -220,6 +256,22 @@ This dataset also includes over 2,000 constructed climatic variables (monthly SP
 ```{r}
 
 dt3var
+
+```
+
+### Dataset #4 (SSA Poverty Regressions)
+
+This dataset contains `r hh.dim$hh4[2]` variables and `r hh.dim$hh4[1]` observations. The breakdown across countries and survey years is as follows, and variables are further described in the next table. This is a district-level dataset (IFPRI holds the hh-level variables).
+
+```{r}
+
+dt4sum
+
+```
+
+```{r}
+
+dt4var
 
 ```
 
