@@ -186,7 +186,7 @@ dt1var
 
 ```
 
-### Dataset #2 (Farm variables for Ag Snapshots)
+### Dataset #2 (Farm variables for Agricultural Snapshots)
 
 The household-level file is corrupt (would need to contact IFPRI directly) but the variables are similar in the region-level file.
 
@@ -206,7 +206,7 @@ dt2var
 ```
 
 
-### Dataset #3 (Panels for Resilience study)
+### Dataset #3 (Panels for Resilience Study)
 
 
 This dataset contains `r hh.dim$hh3[2]` variables and `r hh.dim$hh3[1]`  observations. The breakdown across countries and survey years is as follows, and variables are further described in the next table.
@@ -232,6 +232,9 @@ IFPRI also hold cross-country harmonized variables from the latest DHS. Complete
 
 ## Other Country-Level Panel Variables
 
+### Ghana GLSS Rounds
+
+### Tanzania Farm Segmentation Study
 
 
 # References
