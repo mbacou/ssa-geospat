@@ -227,7 +227,7 @@ dt3var
 
 ## Demographic and Health Surveys (harmonized)
 
-IFPRI also hold cross-country harmonized variables from the latest DHS. Complete metadata is in a [DHS Google Sheet](https://docs.google.com/spreadsheets/d/1v8DDLgi9lQbS4uKnxYPM83PYC90rijJvjKN4xAntKlE/edit#gid=916658631). We need to request access to the CHILD and WOMAN recodes, I only have the STRATA summaries.
+IFPRI also holds cross-country harmonized variables from the latest DHS. Complete metadata is in a [DHS Google Sheet](https://docs.google.com/spreadsheets/d/1v8DDLgi9lQbS4uKnxYPM83PYC90rijJvjKN4xAntKlE/edit#gid=916658631). We need to request access to the CHILD and WOMAN recodes, I only have the STRATA summaries.
 
 
 ## Other Country-Level Panel Variables
