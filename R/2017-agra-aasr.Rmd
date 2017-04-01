@@ -117,6 +117,10 @@ rm(hh3)
 dt3var <- rhandsontable(hh3.lbl[1:150], rowHeaders=NULL) %>%
   hot_col("Hist.", renderer = htmlwidgets::JS("renderSparkline"))
 
+# DHS metadata
+
+
+
 # Save workspace
 save.image("../tmp/2017-agra-aasr.RData")
 
@@ -222,6 +226,8 @@ dt3var
 ```
 
 ## Demographic and Health Surveys (harmonized)
+
+IFPRI also hold cross-country harmonized variables from the latest DHS. Complete metadata is at in a [DHS Google Sheet](https://docs.google.com/spreadsheets/d/1v8DDLgi9lQbS4uKnxYPM83PYC90rijJvjKN4xAntKlE/edit#gid=916658631). We need to request access to the CHILD and WOMAN recodes, I only have the STRATA summaries.
 
 
 ## Other Country-Level Panel Variables
