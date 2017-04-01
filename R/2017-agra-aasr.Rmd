@@ -19,7 +19,7 @@ bibliography: biblio.bib
 
 --------------------------------------------------------------------------------------
 
-```{r, message=FALSE}
+```{r, message=FALSE, collapse=TRUE}
 
 library(data.table)
 library(foreign)
@@ -58,7 +58,7 @@ summaryTable <- function(dt) {
   return(dt.lbl)
 }
 
-# Variables extracted for the Poverty, Land, Climate paper
+# Load dataset #1 (variables extracted for the Poverty, Land, Climate paper)
 hh1 <- read.dta("../tmp/Final_SSA_hhPOV_ 6 Apr 2016.12.dta")
 hh.dim <- list(hh1=dim(hh1))
 
@@ -78,7 +78,7 @@ rm(hh1)
 dt1var <- rhandsontable(hh1.lbl, rowHeaders=NULL) %>%
   hot_col("Hist.", renderer = htmlwidgets::JS("renderSparkline"))
 
-# Load dataset #2
+# Load dataset #2 (HarvestChoice Ag Snapshots)
 hh2 <- read.dta("../tmp/Combined_Regdemovars13.12.dta")
 hh.dim$hh2 <- dim(hh2)
 
@@ -97,7 +97,7 @@ rm(hh2)
 dt2var <- rhandsontable(hh2.lbl, rowHeaders=NULL) %>%
   hot_col("Hist.", renderer = htmlwidgets::JS("renderSparkline"))
 
-# Load dataset #3
+# Load dataset #3 (Beliyou's Resilience Study)
 hh3 <- read.dta("../tmp/Combined_4_Mel.12.dta")
 hh.dim$hh3 <- dim(hh3)
 
@@ -117,9 +117,7 @@ rm(hh3)
 dt3var <- rhandsontable(hh3.lbl[1:150], rowHeaders=NULL) %>%
   hot_col("Hist.", renderer = htmlwidgets::JS("renderSparkline"))
 
-# DHS metadata
-
-
+# Load GHA GLSS rounds (Eduardo)
 
 # Save workspace
 save.image("../tmp/2017-agra-aasr.RData")
