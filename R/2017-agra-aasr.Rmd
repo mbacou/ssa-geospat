@@ -292,9 +292,11 @@ IFPRI holds cross-country harmonized variables from the latest DHS. Complete met
 
 ### Ghana GLSS Rounds
 
-(from Eduardo)
+Eduardo has 3 rounds of harmonized variables focused on wages/productivity.
 
 ### Nigeria Farm Segmentation Study
+
+(if needed)
 
 
 # References
