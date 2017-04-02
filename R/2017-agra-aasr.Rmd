@@ -24,11 +24,9 @@ nocite: |
 
 --------------------------------------------------------------------------------------
 
-```{r, message=FALSE, collapse=TRUE}
+```{r, echo=FALSE}
 
 library(data.table)
-library(foreign)
-library(stringr)
 library(rhandsontable)
 library(jsonlite)
 
@@ -37,7 +35,16 @@ load("../tmp/2017-agra-aasr.RData")
 ```
 
 
-```{r, eval=FALSE, collapse=TRUE}
+```{r, eval=FALSE}
+
+library(data.table)
+library(foreign)
+library(stringr)
+library(rhandsontable)
+library(jsonlite)
+
+setwd("~/Projects/ssa-geospat")
+load("./tmp/2017-agra-aasr.RData")
 
 #####################################################################################
 # Helper - Construct variable summary
@@ -65,7 +72,7 @@ summaryTable <- function(dt) {
 #####################################################################################
 
 # Load dataset #1 (variables extracted for the Poverty, Land, Climate paper)
-hh1 <- read.dta("../tmp/Final_SSA_hhPOV_ 6 Apr 2016.12.dta")
+hh1 <- read.dta("./tmp/Final_SSA_hhPOV_ 6 Apr 2016.12.dta")
 hh.dim <- list(hh1=dim(hh1))
 
 # Show summaries
@@ -86,7 +93,7 @@ dt1var <- rhandsontable(hh1.lbl, rowHeaders=NULL, height=600) %>%
   hot_cols(fixedColumnsLeft = 1)
 
 # Load dataset #2 (HarvestChoice Ag Snapshots)
-hh2 <- read.dta("../tmp/Combined_Regdemovars13.12.dta")
+hh2 <- read.dta("./tmp/Combined_Regdemovars13.12.dta")
 hh.dim$hh2 <- dim(hh2)
 
 # Summarize
@@ -106,7 +113,7 @@ dt2var <- rhandsontable(hh2.lbl, rowHeaders=NULL, height=600) %>%
   hot_cols(fixedColumnsLeft = 1)
 
 # Load dataset #3 (Beliyou's Resilience Study)
-hh3 <- read.dta("../tmp/Combined_4_Mel.12.dta")
+hh3 <- read.dta("./tmp/Combined_4_Mel.12.dta")
 hh.dim$hh3 <- dim(hh3)
 
 # Summarize
@@ -127,7 +134,7 @@ dt3var <- rhandsontable(hh3.lbl[1:150], rowHeaders=NULL, height=600) %>%
   hot_cols(fixedColumnsLeft = 1)
 
 # Load dataset #4 (SSA Poverty)
-hh4 <- read.dta("../tmp/SSApoverty_Dist_forGWR.12.dta")
+hh4 <- read.dta("./tmp/SSApoverty_Dist_forGWR.12.dta")
 hh.dim$hh4 <- dim(hh4)
 
 # Keep labels
@@ -166,7 +173,7 @@ dt4var <- rhandsontable(hh4.lbl, rowHeaders=NULL, height=600) %>%
 # Load GHA GLSS rounds (Eduardo)
 
 # Save workspace
-save.image("../tmp/2017-agra-aasr.RData")
+save.image("./tmp/2017-agra-aasr.RData")
 
 ```
 
