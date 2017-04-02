@@ -1,7 +1,9 @@
 ---
 title: "Panel Analyses for sub-Saharan Africa"
 author: "[Melanie Bacou](http://github.com/mbacou)"
-output: html_document
+output:
+  tint::tintHtml: 
+     self_contained: TRUE
 ---
 
 Work in progress:
