@@ -8,6 +8,7 @@ output:
     toc: yes
     toc_depth: 3
     toc_float: yes
+    code_folding: hide
   tufte::tufte_html:
     tufte_variant: envisioned  
     toc: yes
@@ -292,7 +293,7 @@ IFPRI holds cross-country harmonized variables from the latest DHS. Complete met
 
 ### Ghana GLSS Rounds
 
-Eduardo has 3 rounds of harmonized variables focused on wages/productivity.
+Eduardo has 3 rounds (2005, 2008, 2012) of harmonized variables focused on wages/productivity.
 
 ### Nigeria Farm Segmentation Study
 
@@ -301,7 +302,7 @@ Eduardo has 3 rounds of harmonized variables focused on wages/productivity.
 
 # References
 
-Note that some of these references are unpublished materials, not to be cited.
+Note that some of these references are unpublished materials, do not cite.
 
 
 
