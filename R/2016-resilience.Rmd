@@ -21,12 +21,12 @@ library(spdep)
 library(splm)
 library(tmap)
 
-setwd("~/Projects/hc-shiny/geospat")
-load("./tmp/resilience.RData")
+load("../tmp/resilience.RData")
 
 ```
 
-```{r helper, collapse=TRUE}
+
+```{r helper}
 
 # Display options
 library(pander)
