@@ -2,7 +2,6 @@
 title: "Panel Analyses for sub-Saharan Africa"
 author: "[Melanie Bacou](http://github.com/mbacou)"
 output: html_document
-css: ./R/fix.css
 ---
 
 Work in progress:
