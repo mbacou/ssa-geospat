@@ -1,20 +1,32 @@
 ---
-title:  SSA Poverty - Spatial Regression
-author: IFPRI/HarvestChoice
-date:   Last updated on `r Sys.Date()`. DRAFT, DO NOT USE OR CITE.
+title:  SSA Poverty - Geographically Weighted Regressions
+author: "[Melanie Bacou](http://github.com/mbacou) for IFPRI/HarvestChoice"
+date:   "Last updated on `r Sys.Date()`. DRAFT, DO NOT USE OR CITE."
 output: 
-  html_notebook:
-    fig_caption: yes
-    fig_height: 5
+  html_document:
     toc: yes
     toc_depth: 2
     toc_float: yes
+    code_folding: hide
+csl: apa.csl
+fig_caption: yes
+fig_height: 5
+link-citations: yes
+nocite: |
+  @lu2014gwmodel
+css: fix.css
+bibliography: biblio.bib    
 ---
 
-This notebook is to replicate Sara's district-wise poverty regressions in R and explore alternate approaches to defining spatial weights across districts (testing for spatial autocorrelation in the series of predictors), and to map GWR coefficients. Sara's original code is taken from [3 Regression analysis district rural poverty - shock reg.do](https://www.dropbox.com/work/SDA/Data/analysis/_global_codes/do/SSA Dist Pov&CC/3 Reg district rural poverty.do).
+This notebook is to replicate Sara's district-wise poverty regressions in R and explore alternate approaches to defining spatial weights across districts (testing for spatial autocorrelation in the series of predictors), and to map GWR coefficients. Sara's original code is taken from [Regression analysis district rural poverty - shock reg.do](https://www.dropbox.com/work/SDA/Data/analysis/_global_codes/do/SSA Dist Pov&CC/3 Reg district rural poverty.do).
+
+R provides a number of GWR utilities (e.g. in libs `spgwr` by @bivand2013spatialR and in a more recent `GWmodel` by @gollini2015gwmodel). We might need to evaluate both libraries.
+
+> GWmodel includes functions for: GW summary statistics, GW principal components analysis, GW regression, and GW discriminant analysis; some of which are provided in basic and robust forms.
+(@gollini2015gwmodel)
 
 
-```{r, message=FALSE}
+```{r init, message=FALSE}
 
 library(raster)
 library(foreign)
@@ -25,30 +37,24 @@ library(spgwr)
 library(tmap)
 library(stringr)
 
-```
-
-```{r, collapse=TRUE}
-
-# Presentation options
+# General output options
 library(pander)
 panderOptions("big.mark", ",")
 panderOptions("round", 2)
 panderOptions("missing", ".")
 panderOptions("table.split.table", 100)
 
-```
-
-```{r}
-
-# Load R workspace on BUSTER
-setwd("~/Projects/hc-shiny/geospat")
+setwd("~/Projects/geospat")
 load("./tmp/poverty_r16.05.RData")
-#setwd("~/Dropbox (IFPRI)/SDA/Data/analysis/_global_codes")
-#load("./temp/2016.05/poverty_r16.05.RData")
+
+# Source files are located here
+# setwd("~/Dropbox (IFPRI)/SDA/Data/analysis/_global_codes")
+# load("./temp/2016.05/poverty_r16.05.RData")
 
 ```
 
-```{r, collapse=TRUE}
+
+```{r, eval=FALSE}
 
 # Helper
 "%||%" <- function(a, b) if (!is.null(a)) a else b
@@ -94,6 +100,8 @@ spml.godf<-function(object, k=2, criterion=c("AIC", "BIC"),  ...) {
 # Load districts and attributes
 g2 <- shapefile("./maps/svyMaps_2016.06.22_sara.shp")
 dt2 <- read.dta("./tmp/SSApoverty_Dist_forGWR.12.dta")
+
+# Source files are located here
 #g2 <- shapefile("./out/r16.05/svyMaps_2016.06.22_sara.shp")
 #dt2 <- read.dta("./temp/2016.05/SSApoverty_Dist_forGWR.12.dta")
 
@@ -568,4 +576,7 @@ gwrG <- ggwr(fm, data=g2.nb, bandwidth=bwG, gweight=gwr.Gauss, hatmatrix=TRUE,
 save.image("./tmp/poverty_r16.05.RData")
 
 ```
+
+# References
+
 
